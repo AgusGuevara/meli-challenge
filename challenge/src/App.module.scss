@@ -1,0 +1,17 @@
+@use "./Styles/global.module.scss" as global;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+.appContainer{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 18% [content] auto 18%;
+    grid-template-rows: repeat(11, 9.3%);
+    background-color: global.$meli-light-grey;
+}

@@ -1,0 +1,12 @@
+@use '../../Styles/global.module.scss' as global;
+
+.headerContainer{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: global.$meli-yellow;
+    height: 75%;
+    margin-left: -33.33%;
+    margin-right: -33.33%;
+}

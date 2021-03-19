@@ -1,0 +1,13 @@
+@use "/src/Styles/global.module.scss" as global;
+
+.buyBtn{
+    font-size: 100%;
+    font-family: inherit;
+    border: 0;
+    padding: 0;
+    width: 350px;
+    height: 40px;
+    border-radius: 4px;
+    color: white;
+    background-color: global.$meli-blue;
+}

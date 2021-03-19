@@ -1,0 +1,14 @@
+.listStyle{
+    flex-flow: column;
+    grid-column-start: content;
+    grid-row-start: 2;
+    grid-row-end: 11;
+    background-color: white;
+}
+
+.detailStyle{
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(9, 11.11%);
+    border-radius: 4px;
+    height: 100%;
+}

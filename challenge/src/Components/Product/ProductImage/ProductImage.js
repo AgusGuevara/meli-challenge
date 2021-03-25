@@ -1,25 +1,30 @@
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 // Styles
 import styles from "./ProductImage.module.scss";
 
-const ProductImage = ({ imageUrl, size, alt, margin }) => {
+const ProductImage = ({ imageUrl, size, alt }) => {
   // should've built an image component
   const defaultStyles = {
-    background: `url("${imageUrl}")`,
-    width: `${size.width}`,
-    height: `${size.height}`,
+    backgroundImage: `url("${imageUrl}")`,
+  };
+
+  const checkSize = (x) => {
+    return x === "list" ? styles.list : x === "detail" ? styles.detail : "";
   };
 
   return (
     <>
-      <div style={defaultStyles} className={styles.imageStyle} />
+      <div
+        style={defaultStyles}
+        className={`${styles.imageStyle} ${checkSize(size)}`}
+      />
     </>
   );
 };
 
-ProductImage.propTypes = {
-  imageUrl: PropTypes.string.isRequired,
-};
+// ProductImage.propTypes = {
+//   imageUrl: PropTypes.string.isRequired,
+// };
 
 export default ProductImage;

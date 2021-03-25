@@ -1,14 +1,18 @@
 import React from "react";
 // Components
-import Search from "./Search/Search";
+import Icon from "./Icon/Icon";
+import SearchBar from "./SearchBar/SearchBar";
 //styles
 import styles from "./Header.module.scss";
 
-const Header = () => {
+const Header = ({ toHeaderView }) => {
   return (
     <>
       <header className={styles.headerContainer}>
-        <Search />
+        <div className={styles.searchContainer}>
+          <Icon />
+          <SearchBar setUserInput={(e) => toHeaderView(e)} />
+        </div>
       </header>
     </>
   );

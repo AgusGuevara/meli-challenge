@@ -5,9 +5,9 @@ import styles from "./Icon.module.scss";
 
 const Icon = () => {
   return (
-    <div className={styles.iconWrapper}>
+    <a href="/" className={styles.iconWrapper}>
       <div className={styles.iconStyle} />
-    </div>
+    </a>
   );
 };
 

@@ -4,17 +4,17 @@ import React from "react";
 import styles from "./ProductDescription.module.scss";
 // Components
 import Text from "../Text/Text";
-const ProductDescription = () => {
+const ProductDescription = ({ descTitle, descText }) => {
   return (
     <div className={`${styles.descriptionContainer}`}>
       <Text position="description" fontSize="28">
-        hola soy el produdescishion
+        {descTitle}
       </Text>
-      <Text fontSize="16" fontColor="#666666">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ab ut
-        sit aliquam veniam architecto dolores at eius? A beatae maxime dolorem
-        sed molestiae! Deserunt qui facilis ipsum quis voluptate.
-      </Text>
+      <div className={styles.descriptionWrapper}>
+        <span className={styles.description} fontSize="16" fontcolor="#666666">
+          {descText}
+        </span>
+      </div>
     </div>
   );
 };

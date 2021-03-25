@@ -1,34 +1,22 @@
 @use "../../../Styles/global.module.scss" as global; 
 
-.priceTagListContainer {
-    width: auto;
-    display: flex;
-    position: relative;
-    right: 38% ;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+.priceTagList {
     font-size: global.$meli-font-size-24px;
-    margin-bottom: 128px;
-
-    .smallTag{
-        color: global.$meli-black;
-    }
-
+    margin-bottom: 16px;
     .shippingLogo{
         width: 36px;
         height: 36px;
-        margin: 5%;
+        display: inline-block;
+        position: relative;
+        top: 5px;
+        margin-left: 5%;
         background-image: url("../../../Assets/Icons/ic_shipping@2x.png.png.png");
     }
 }
 
-
-.priceTagDetailContainer{
+.priceTagDetail{
     margin: 0 0 32px 0;
-
-    .bigTag{
-        font-size: global.$meli-font-size-46px;
-    }
+    font-size: global.$meli-font-size-46px;
+    
 }
 

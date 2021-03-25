@@ -4,14 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    -webkit-font-smoothing: antialiased;
 }
 
-
 .appContainer{
-    height: 100vh;
     display: grid;
-    grid-template-columns: 18% [content] auto 18%;
+    grid-template-columns: 1fr [content] 70% 1fr;
     grid-template-rows: repeat(11, 9.3%);
     background-color: global.$meli-light-grey;
 }

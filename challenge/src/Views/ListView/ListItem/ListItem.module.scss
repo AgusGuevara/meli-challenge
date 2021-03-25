@@ -1,5 +1,21 @@
 .listItemContainer {
     display: flex;
     flex-flow: row;
+    justify-content: flex-start;
     background: white;
+    color: inherit;
+    text-decoration: none;
+    height: 196px;
+
+    .textPriceList{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        width: 60%;
+    }
+
+    .city{
+        margin-top: 32px;
+        margin-right: 16px;
+    }
 }

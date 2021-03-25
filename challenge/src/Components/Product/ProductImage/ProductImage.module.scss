@@ -1,8 +1,19 @@
 .imageStyle{
     border-radius: 4px;
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
+    background-size: contain;
+}
+
+.list{
     margin: 16px;
+    width: 180px;
+    height: 180px;
+}
+
+.detail {
+    margin: 0;
+    width: 680px;
+    height: 680px;
 }
 

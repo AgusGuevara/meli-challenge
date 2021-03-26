@@ -22,7 +22,7 @@ router.route("/items/:id").get((req, res) => {
         });
     })
     .catch((err) => {
-      console.log(err);
+      console.log("error de detail -> " + err);
     });
 });
 
@@ -32,13 +32,17 @@ router.route("/items").get((req, res) => {
     .get("https://api.mercadolibre.com/sites/MLA/search?q=" + searchQuery)
     .then((response) => {
       const data = response.data.results.slice(0, 4);
-      const hola = response.data.filters.find((x) => x.id === "category")
-        .values[0].path_from_root;
-      const sendInfo = list.createListData(data, hola);
+      const cat = response.data.filters;
+      const catData = (x) => {
+        if (cat.length > 0) {
+          return x.find((x) => x.id === "category").values[0].path_from_root;
+        }
+      };
+      const sendInfo = list.createListData(data, catData(cat));
       res.json(sendInfo);
     })
     .catch((error) => {
-      console.log(error);
+      console.log("error de list -> " + error);
     });
 });
 module.exports = router;

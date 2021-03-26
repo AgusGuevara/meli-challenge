@@ -1,11 +1,11 @@
-const createListData = (obj, cat) => {
+const createListData = (obj, categories) => {
   let arr = [
     {
       author: {
         name: "Agustin Thomas",
         lastname: "Guevara",
       },
-      categories: cat,
+      categories: categories,
       items: [],
     },
   ];

@@ -17,6 +17,9 @@ const createDetailData = (item, desc) => {
             return x.toString().split(".")[1];
           })(item.price),
         },
+        category: item.attributes.filter((attr) => {
+          return attr.attribute_group_name === "Principales";
+        }),
         picture: item.pictures[0].url,
         condition: item.condition,
         free_shiping: item.shipping.free_shipping,

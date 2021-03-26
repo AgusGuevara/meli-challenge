@@ -1,13 +1,14 @@
 
 .iconWrapper{
-    width: 15%;
     height: auto;
-    margin: 0 2% 0 0;
+    margin: 0 4% 0 0;
     
     .iconStyle{
-        background-image: url('./images/meliAresized.png');
-        max-width: 134px;
-        height: 34px;
+        content: url('./images/meli-logo-small.png');
+        max-width: 60px;
+        max-height: 40px;
         background-repeat: no-repeat;
     }
 }
+
+

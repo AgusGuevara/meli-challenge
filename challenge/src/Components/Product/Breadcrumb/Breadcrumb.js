@@ -1,22 +1,36 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // Styles
 import styles from "./Breadcrumb.module.scss";
 
-const Breadcrumb = ({ crumb = ["hola", "soy", "un", "breadcrumb"] }) => {
+const Breadcrumb = ({ crumbData, comp }) => {
   return (
-    <div className={styles.breadWrapper}>
+    <div
+      className={
+        comp === "list"
+          ? styles.breadListWrapper
+          : comp === "detail"
+          ? styles.breadDetailWrapper
+          : ""
+      }
+    >
       <ul className={styles.breadStyle}>
-        {crumb.map((x) => {
+        {crumbData.map((x, key) => {
           return (
-            <li>
-              <a href="x">- {x} -</a>
+            <li className={styles.breadCrumbItem} key={key}>
+              {comp === "list" ? x.name : comp === "detail" ? x.value_name : ""}
             </li>
           );
         })}
       </ul>
     </div>
   );
+};
+
+Breadcrumb.PropType = {
+  crumbData: PropTypes.array,
+  comp: PropTypes.string,
 };
 
 export default Breadcrumb;

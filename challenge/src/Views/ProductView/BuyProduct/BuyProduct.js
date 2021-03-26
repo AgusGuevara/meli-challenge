@@ -1,4 +1,5 @@
 import React from "react";
+import PropType from "prop-types";
 
 //Styles
 import styles from "./BuyProduct.module.scss";
@@ -23,4 +24,11 @@ const BuyProduct = ({ condition, selled, title, price, decimals }) => {
   );
 };
 
+BuyProduct.PropType = {
+  condition: PropType.string,
+  selled: PropType.string,
+  title: PropType.string,
+  price: PropType.string,
+  decimals: PropType.string,
+};
 export default BuyProduct;

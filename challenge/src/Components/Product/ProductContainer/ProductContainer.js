@@ -12,12 +12,12 @@ const ProductContainer = ({ size, children }) => {
       ? `${styles.detailStyle}`
       : "";
   };
-
-  return <div className={checkSize()}>{children}</div>;
+  return <div className={checkSize(size)}>{children}</div>;
 };
 
 ProductContainer.PropType = {
   size: PropType.oneOf(["list", "detail"]),
+  children: PropType.element,
 };
 
 export default ProductContainer;

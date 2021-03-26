@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 // Styles
 import styles from "./ListItem.module.scss";
@@ -50,4 +51,14 @@ const ListItem = ({
   );
 };
 
+ListItem.PropType = {
+  image: PropTypes.string,
+  price: PropTypes.string,
+  shipping: PropTypes.string,
+  city: PropTypes.string,
+  title: PropTypes.string,
+  position: PropTypes.string,
+  prodId: PropTypes.string,
+  decimals: PropTypes.string,
+};
 export default ListItem;

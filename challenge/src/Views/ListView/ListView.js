@@ -1,24 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { withRouter, useLocation } from "react-router-dom";
+import PropType from "prop-types";
 import axios from "axios";
 // Components
 import ListItem from "./ListItem/ListItem";
 import ProductContainer from "../../Components/Product/ProductContainer/ProductContainer";
+import Breadcrumb from "../../Components/Product/Breadcrumb/Breadcrumb";
+import Error from "../../Components/Error/Error";
 
 // Style
+import styles from "./ListView.module.scss";
+
 const ListView = ({ toApp }) => {
   let location = useLocation();
   const [userInput, setUserInput] = useState(location.state.input);
   const [itemData, setItemData] = useState("");
   const [goFetch, setGoFetch] = useState(true);
-
+  const [errorComp, setErrorComp] = useState(false);
   const getlistData = () => {
     axios
-      .get(`http://localhost:5000/api/items?q=${userInput}`)
+      .get(`http://localhost:8080/api/items?q=${userInput}`)
       .then((response) => {
-        console.log("response de list " + response.data[0]);
-        const respu = response.data;
-        setItemData(respu);
+        const responseData = response.data;
+        setItemData(responseData);
+      })
+      .catch((err) => {
+        console.log(err);
+        setErrorComp(true);
       });
   };
 
@@ -31,9 +39,15 @@ const ListView = ({ toApp }) => {
   });
 
   return (
-    <>
+    <div className={styles.position}>
+      {errorComp || userInput === "" ? <Error /> : ""}
       {itemData ? (
         <ProductContainer size="list">
+          {itemData[0].categories ? (
+            <Breadcrumb comp="list" crumbData={itemData[0].categories} />
+          ) : (
+            ""
+          )}
           {itemData[0].items.map((item, key) => {
             return (
               <ListItem
@@ -53,10 +67,12 @@ const ListView = ({ toApp }) => {
       ) : (
         ""
       )}
-    </>
+    </div>
   );
 };
 
-export default withRouter(ListView);
+ListView.PropType = {
+  toApp: PropType.func,
+};
 
-// itemData[0].items
+export default withRouter(ListView);

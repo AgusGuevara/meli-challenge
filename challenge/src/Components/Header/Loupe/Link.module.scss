@@ -1,0 +1,15 @@
+@use '../../../Styles/global.module.scss' as global;
+.link{
+    height: 100%;
+    width: 40px;
+    background-color: global.$meli-light-grey;
+    
+    .inner{
+        position: relative;
+        top: 8px;
+        left: 8px;
+        height: 26px;
+        width: 26px;
+        content: url('../../../Assets/Icons/ic_Search@2x.png.png.png');
+    }
+}

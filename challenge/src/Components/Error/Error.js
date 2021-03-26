@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./Error.module.scss";
 
 const Error = (position) => {
@@ -16,6 +17,10 @@ const Error = (position) => {
       correctos!
     </div>
   );
+};
+
+Error.propTypes = {
+  position: PropTypes.string,
 };
 
 export default Error;

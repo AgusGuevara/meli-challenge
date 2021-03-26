@@ -1,10 +1,9 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 // Styles
 import styles from "./ProductImage.module.scss";
 
 const ProductImage = ({ imageUrl, size, alt }) => {
-  // should've built an image component
   const defaultStyles = {
     backgroundImage: `url("${imageUrl}")`,
   };
@@ -23,8 +22,8 @@ const ProductImage = ({ imageUrl, size, alt }) => {
   );
 };
 
-// ProductImage.propTypes = {
-//   imageUrl: PropTypes.string.isRequired,
-// };
+ProductImage.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+};
 
 export default ProductImage;

@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 //Styles
 import styles from "./Text.module.scss";
@@ -50,18 +50,18 @@ const Text = ({
   );
 };
 
-// Text.PropType = {
-//   px: PropTypes.string,
-//   width: PropTypes.string,
-//   height: PropTypes.string,
-//   fontColor: PropTypes.string,
-//   fontFamily: PropTypes.string,
-//   margin: PropTypes.shape({
-//     top: PropTypes.string,
-//     bottom: PropTypes.string,
-//     left: PropTypes.string,
-//     right: PropTypes.string,
-//   }),
-// };
+Text.PropType = {
+  px: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  fontColor: PropTypes.string,
+  fontFamily: PropTypes.string,
+  margin: PropTypes.shape({
+    top: PropTypes.string,
+    bottom: PropTypes.string,
+    left: PropTypes.string,
+    right: PropTypes.string,
+  }),
+};
 
 export default Text;

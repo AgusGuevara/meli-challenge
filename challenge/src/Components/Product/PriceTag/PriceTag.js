@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 // Styles
 import styles from "./PriceTag.module.scss";
@@ -29,23 +29,23 @@ const PriceTag = ({
   );
 };
 
-// PriceTag.propTypes = {
-//   size: PropTypes.oneOf(["detail", "list"]),
-//   price: PropTypes.string,
-//   currency: PropTypes.oneOf([
-//     "R$",
-//     "U$S",
-//     "Bs",
-//     "$",
-//     "¢",
-//     "Q",
-//     "L",
-//     "C$",
-//     "B/",
-//     "₲",
-//     "S/",
-//     "Bs.",
-//   ]),
-//   shipping: PropTypes.bool,
-// };
+PriceTag.propTypes = {
+  size: PropTypes.oneOf(["detail", "list"]),
+  price: PropTypes.string,
+  currency: PropTypes.oneOf([
+    "R$",
+    "U$S",
+    "Bs",
+    "$",
+    "¢",
+    "Q",
+    "L",
+    "C$",
+    "B/",
+    "₲",
+    "S/",
+    "Bs.",
+  ]),
+  shipping: PropTypes.bool,
+};
 export default PriceTag;

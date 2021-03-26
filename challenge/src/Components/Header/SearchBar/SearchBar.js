@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 //Styles
 import styles from "./SearchBar.module.scss";
 
+import Loupe from "../Loupe/Loupe";
+
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
 
@@ -16,13 +18,13 @@ const SearchBar = () => {
           className={styles.inputStyle}
           placeholder="Nunca dejes de buscar"
         />
-        <Link
+        <Loupe
           to={{
             pathname: "/items",
             search: `search=${searchValue}`,
             state: { input: searchValue },
           }}
-          className={styles.btnStyle}
+          // className={styles.btnStyle}
         />
       </form>
     </>

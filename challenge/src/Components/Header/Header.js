@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 // Components
 import Icon from "./Icon/Icon";
 import SearchBar from "./SearchBar/SearchBar";
@@ -16,6 +17,10 @@ const Header = ({ toHeaderView }) => {
       </header>
     </>
   );
+};
+
+Header.PropType = {
+  toHeaderView: PropTypes.func,
 };
 
 export default Header;

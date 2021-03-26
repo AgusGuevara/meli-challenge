@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropType from "prop-types";
 // Styles
 import styles from "./ProductDescription.module.scss";
 // Components
@@ -17,6 +17,11 @@ const ProductDescription = ({ descTitle, descText }) => {
       </div>
     </div>
   );
+};
+
+ProductDescription.PropType = {
+  descTitle: PropType.string,
+  descText: PropType.string,
 };
 
 export default ProductDescription;

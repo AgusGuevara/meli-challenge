@@ -1,12 +1,45 @@
-.breadWrapper{
+@use  "../../../Styles/global.module.scss" as global;
+.breadListWrapper {
     position: relative;
     bottom: 16px;
     width: 50%;
     height: 20px;
-
+    
     .breadStyle{
         display: flex;
         list-style: none;
     }
 
+    .breadCrumbItem{
+        font-size: global.$meli-font-size-14px;
+        color: global.$meli-dark-grey;
+
+        &:not(:last-of-type)::after{
+            content: '>';
+            margin: 0 5px;
+        }
+    }
+
+}
+
+.breadDetailWrapper{
+    position: relative;
+    bottom: 25px;
+    width: 50%;
+    height: 20px;
+    
+    .breadStyle{
+        display: flex;
+        list-style: none;
+    }
+
+    .breadCrumbItem{
+        font-size: global.$meli-font-size-14px;
+        color: global.$meli-dark-grey;
+
+        &:not(:last-of-type)::after{
+            content: '>';
+            margin: 0 5px;
+        }
+    }
 }

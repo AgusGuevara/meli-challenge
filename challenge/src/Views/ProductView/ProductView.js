@@ -10,6 +10,7 @@ import ProductContainer from "../../Components/Product/ProductContainer/ProductC
 import ProductImage from "../../Components/Product/ProductImage/ProductImage";
 import BuyProduct from "./BuyProduct/BuyProduct";
 import ProductDescription from "../../Components/Product/ProductDescription/ProductDescription";
+import BreadCrumb from "../../Components/Product/Breadcrumb/Breadcrumb";
 import Error from "../../Components/Error/Error";
 
 const ProductView = () => {
@@ -17,15 +18,21 @@ const ProductView = () => {
   const { id } = useParams();
   const [itemId] = useState(id);
   const [goFetch, setGoFetch] = useState(true);
-  const [errorComp, setErrorComp] = useState(true);
+  const [errorComp, setErrorComp] = useState(false);
 
   const getRenderData = () => {
     return axios
-      .get(`http://localhost:5000/api/items/${itemId}`)
+      .get(`http://localhost:8080/api/items/${itemId}`)
       .then((response) => {
+        console.log(response.data);
         setItemData(response.data);
       })
-      .catch((err) => console.log(err), setErrorComp(true));
+      .catch((err) => {
+        if (err) {
+          console.log(err);
+          setErrorComp(true);
+        }
+      });
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -41,7 +48,9 @@ const ProductView = () => {
     <BrowserRouter>
       {itemData ? (
         <div className={styles.productView}>
+          {errorComp ? <Error /> : ""}
           <ProductContainer size="detail">
+            <BreadCrumb comp="detail" crumbData={itemData[0].item.category} />
             <ProductImage size="detail" imageUrl={itemData[0].item.picture} />
             <BuyProduct
               condition={itemData[0].item.condition}

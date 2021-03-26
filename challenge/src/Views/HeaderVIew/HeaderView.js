@@ -1,4 +1,5 @@
 import React from "react";
+import PropType from "prop-types";
 import { withRouter } from "react-router-dom";
 
 // Components
@@ -13,6 +14,10 @@ const HeaderView = ({ toApp }) => {
       <Header toHeaderView={(e) => toApp(e)} />
     </div>
   );
+};
+
+HeaderView.PropType = {
+  toApp: PropType.func,
 };
 
 export default withRouter(HeaderView);

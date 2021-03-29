@@ -8,12 +8,15 @@ To use :
 
 2- once cloned, install dependencies for both backend and front end enviroments:
 
-cd meli-challenge
-cd backendmeli
-npm i
-cd ..
-cd challenge
-npm i
+<ul>
+  <li>cd meli-challenge</li>
+  <li>cd backendmeli</li>
+  <li>npm i</li>
+  <li>cd ..</li>
+  <li>cd challenge</li>
+  <li>npm i</li>
+</ul>
+
 
 3- once everything is installed, in challenge folder run npm run runapp 
 

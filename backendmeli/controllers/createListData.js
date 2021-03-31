@@ -10,24 +10,25 @@ const createListData = (obj, categories) => {
     },
   ];
 
-  obj.map((a) =>
+  obj.map((item) =>
     arr[0].items.push({
-      id: a.id,
-      title: a.title,
+      id: item.id,
+      title: item.title,
       price: [
         {
-          currency: a.currency_id,
+          currency: item.currency_id,
           amount: ((x) => {
             return x.toString().split(".")[0];
-          })(a.price),
+          })(item.price),
           decimals: ((x) => {
             return x.toString().split(".")[1];
-          })(a.price),
+          })(item.price),
         },
       ],
-      picture: a.thumbnail,
-      condition: a.condition,
-      free_shipping: a.shipping.free_shipping,
+      picture: item.thumbnail,
+      condition: item.condition,
+      free_shipping: item.shipping.free_shipping,
+      address: item.address.state_name,
     })
   );
   return arr;

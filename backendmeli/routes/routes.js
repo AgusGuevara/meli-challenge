@@ -17,12 +17,21 @@ router.route("/items/:id").get((req, res) => {
       return axios
         .get("https://api.mercadolibre.com/items/" + param + "/description")
         .then((response) => {
-          const description = response.data;
-          res.send(detail.createDetailData(data, description));
+          if (!response.status === 200) {
+            res.json("error en descripcion");
+          } else if (response.status === 200) {
+            const description = response.data;
+            return res.json(detail.createDetailData(data, description));
+          }
+        })
+        .catch((err) => {
+          if (err.response) {
+            console.log("error in detail");
+          }
         });
     })
     .catch((err) => {
-      console.log("error de detail -> " + err);
+      res.json({ triggerError: true, message: err });
     });
 });
 
@@ -42,7 +51,7 @@ router.route("/items").get((req, res) => {
       res.json(sendInfo);
     })
     .catch((error) => {
-      console.log("error de list -> " + error);
+      res.send("error de list -> " + error);
     });
 });
 module.exports = router;

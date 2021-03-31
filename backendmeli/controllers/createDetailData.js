@@ -20,7 +20,7 @@ const createDetailData = (item, desc) => {
         category: item.attributes.filter((attr) => {
           return attr.attribute_group_name === "Principales";
         }),
-        picture: item.pictures[0].url,
+        picture: item.secure_thumbnail,
         condition: item.condition,
         free_shiping: item.shipping.free_shipping,
         sold_quantity: item.sold_quantity,

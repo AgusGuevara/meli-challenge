@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 //Styles
 import styles from "./SearchBar.module.scss";
 
 import Loupe from "../Loupe/Loupe";
+import Icon from "../Icon/Icon";
 
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
 
   return (
     <>
-      <form className={styles.inputWrapper}>
+      <Icon />
+      <form aria-label="Search form" className={styles.inputWrapper}>
         <input
           type="text"
           value={searchValue}
@@ -24,7 +25,6 @@ const SearchBar = () => {
             search: `search=${searchValue}`,
             state: { input: searchValue },
           }}
-          // className={styles.btnStyle}
         />
       </form>
     </>

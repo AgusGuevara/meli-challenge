@@ -8,10 +8,10 @@ import Header from "../../Components/Header/Header";
 // Style
 import styles from "./HeaderView.module.scss";
 
-const HeaderView = ({ toApp }) => {
+const HeaderView = () => {
   return (
     <div className={styles.search}>
-      <Header toHeaderView={(e) => toApp(e)} />
+      <Header />
     </div>
   );
 };

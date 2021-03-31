@@ -3,6 +3,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    border: none;
+    grid-column-start: 1;
 }
 
 .list{
@@ -12,8 +14,22 @@
 }
 
 .detail {
-    margin: 0;
+    margin: 0 0 16px 16px;
     width: 680px;
     height: 680px;
+}
+
+
+@media only screen and (max-height : 768px){
+    .detail{
+        background: red;
+        width: 480px;
+        height: 380px;
+    }
+
+    .list{
+        height: 120px;
+        width: 120px;
+    }
 }
 

@@ -12,4 +12,5 @@
     grid-template-columns: 1fr [content] 70% 1fr;
     grid-template-rows: repeat(11, 9.3%);
     background-color: global.$meli-light-grey;
+    height: 100vh;
 }

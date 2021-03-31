@@ -20,12 +20,12 @@ const PriceTag = ({
   };
 
   return (
-    <div className={`${componentSize()}`}>
-      <span className={`${componentSize()}`}>{currency}</span>
-      <span className={componentSize()}>{price}</span>
-      <span>.{decimals}</span>
+    <section aria-label="Precio del producto" className={componentSize()}>
+      <p className={componentSize()}>{currency}</p>
+      <p className={componentSize()}>{price}</p>
+      <p className={styles.listDecimals}>.{decimals}</p>
       {shipping === true ? <div className={styles.shippingLogo} /> : ""}
-    </div>
+    </section>
   );
 };
 

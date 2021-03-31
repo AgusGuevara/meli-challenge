@@ -4,27 +4,33 @@ import PropTypes from "prop-types";
 // Styles
 import styles from "./Breadcrumb.module.scss";
 
-const Breadcrumb = ({ crumbData, comp }) => {
+const Breadcrumb = ({ crumbData, inComponent }) => {
   return (
-    <div
-      className={
-        comp === "list"
-          ? styles.breadListWrapper
-          : comp === "detail"
-          ? styles.breadDetailWrapper
-          : ""
-      }
-    >
-      <ul className={styles.breadStyle}>
-        {crumbData.map((x, key) => {
-          return (
-            <li className={styles.breadCrumbItem} key={key}>
-              {comp === "list" ? x.name : comp === "detail" ? x.value_name : ""}
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <>
+      <div
+        className={
+          inComponent === "list"
+            ? styles.breadListWrapper
+            : inComponent === "detail"
+            ? styles.breadDetailWrapper
+            : ""
+        }
+      >
+        <ul aria-label="Categorias" className={styles.breadStyle}>
+          {crumbData.map((x, key) => {
+            return (
+              <li className={styles.breadCrumbItem} key={key}>
+                {inComponent === "list"
+                  ? x.name
+                  : inComponent === "detail"
+                  ? x.value_name
+                  : ""}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </>
   );
 };
 

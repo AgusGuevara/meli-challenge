@@ -7,15 +7,22 @@
     text-decoration: none;
 
 
-    .textPriceList{
+    .titleAndPriceInListWrapper{
         display: flex;
         flex-flow: column;
-        justify-content: center;
         width: 60%;
+        margin-top: 16px;
     }
 
     .city{
         margin-top: 32px;
         margin-right: 16px;
+    }
+}
+
+
+@media only screen and (max-height){
+    .listItemContainer{
+        height: 150px;
     }
 }

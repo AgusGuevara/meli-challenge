@@ -1,16 +1,16 @@
 @use '../../Styles/global.module.scss' as global;
 
-.headerContainer{
+.header{
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: global.$meli-yellow;
     height: 60px;
-    margin-left: -33.33%;
-    margin-right: -33.33%;
+    margin-left: -21.33%;
+    margin-right: -21.33%;
 
     .searchContainer{
-        width: 60%;
+        width: 70%;
         display: flex;
         flex-wrap: nowrap;
         align-items: center;

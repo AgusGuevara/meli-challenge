@@ -2,25 +2,24 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Error.module.scss";
 
-const Error = (position) => {
+const Error = ({ inComponent, msg }) => {
   return (
     <div
       className={
-        position === "list"
+        inComponent === "list"
           ? styles.listError
-          : position === "detail"
+          : inComponent === "detail"
           ? styles.detailError
           : ""
       }
     >
-      Hubo en error al cargar la vista. Chequea que los datos ingresados esten
-      correctos!
+      <p>{msg}</p>
     </div>
   );
 };
 
 Error.propTypes = {
-  position: PropTypes.string,
+  inComponent: PropTypes.string,
 };
 
 export default Error;

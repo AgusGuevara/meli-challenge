@@ -11,16 +11,16 @@ import Button from "../../../Components/Product/Button/Button";
 
 const BuyProduct = ({ condition, selled, title, price, decimals }) => {
   return (
-    <div className={styles.buyProduct}>
-      <Text fontSize="14px" fontColor="#666666" position="condition">
-        {condition} - {selled} vendidos
+    <section aria-label="Info para comprar" className={styles.buyProduct}>
+      <Text tag="p" fontSize="14px" fontColor="#666666" position="condition">
+        {condition === "new" ? "Nuevo" : "Usado"} - {selled} vendidos
       </Text>
-      <Text fontSize="24" fontWeight="bold" position="detail">
+      <Text tag="p" fontSize="24" fontWeight="bold" position="detail">
         {title}
       </Text>
       <PriceTag price={price} decimals={decimals} size="detail" />
       <Button innerText="Comprar" />
-    </div>
+    </section>
   );
 };
 

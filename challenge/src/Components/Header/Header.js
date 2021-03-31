@@ -1,18 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 // Components
-import Icon from "./Icon/Icon";
 import SearchBar from "./SearchBar/SearchBar";
 //styles
 import styles from "./Header.module.scss";
 
-const Header = ({ toHeaderView }) => {
+const Header = () => {
   return (
     <>
-      <header className={styles.headerContainer}>
+      <header className={styles.header}>
         <div className={styles.searchContainer}>
-          <Icon />
-          <SearchBar setUserInput={(e) => toHeaderView(e)} />
+          <SearchBar />
         </div>
       </header>
     </>

@@ -14,6 +14,8 @@ const Text = ({
   fontWeight,
   margin,
   position,
+  tag: Tag,
+  aria,
 }) => {
   return (
     <div
@@ -36,7 +38,8 @@ const Text = ({
         margin: margin,
       }}
     >
-      <p
+      <Tag
+        aria-label={aria}
         style={{
           fontSize: `${fontSize}px`,
           color: fontColor,
@@ -45,7 +48,7 @@ const Text = ({
         }}
       >
         {children}
-      </p>
+      </Tag>
     </div>
   );
 };

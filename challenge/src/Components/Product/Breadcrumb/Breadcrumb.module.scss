@@ -43,3 +43,9 @@
         }
     }
 }
+
+@media only screen and (max-height : 768px){
+    .breadListWrapper{
+        top: -5px;
+    }
+}
